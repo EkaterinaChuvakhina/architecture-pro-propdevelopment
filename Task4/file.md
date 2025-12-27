@@ -1,0 +1,6 @@
+| Роль                 | Права роли                                                                                                                                      | Группы пользователей                           |
+| -------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------| ---------------------------------------------- |
+| **support-view**     | Глаголы: `get`, `list`, `watch` на ресурсы: `pods`, `deployments`, `services`, `configmaps`, `nodes`. Кластерный уровень (cluster-wide).        | Инженеры поддержки (`support-group`)           |
+| **developer-manage** | Глаголы: `create`, `delete`, `get`, `list`, `patch`, `update`, `watch` на ресурсы: `pods`. Только в собственном namespace (например, `dev-ns`). | Разработчики (`developers-group`)              |
+| **security-manage**  | Глаголы: `create`, `delete`, `get`, `list`, `patch`, `update`, `watch` на ресурсы: `secrets`. Кластерный уровень (cluster-wide).                | Специалисты по безопасности (`security-group`) |
+| **security-access**  | Глаголы: `get`, `list`, `watch` на ресурсы: `secrets`. Только в конкретном namespace (например, `secure-ns`).                                   | Специалисты по безопасности (`security-group`) |

@@ -1,0 +1,20 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPPrivilegedContainer
+metadata:
+  name: psp-privileged
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    exemptImages: []
+
+
+  kubectl apply -f 01-privileged-pod.yaml
+  kubectl apply -f 02-hostpath-pod.yaml
+  kubectl apply -f 03-root-user-pod.yaml
+  
+  kubectl apply -f 01-secure.yaml
+  kubectl apply -f 02-secure.yaml
+  kubectl apply -f 03-secure.yaml
